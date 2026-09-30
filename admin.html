@@ -3,265 +3,238 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Especialistas em Notebook — Reparo em Domicílio | Suporte N1/N2</title>
-<meta name="description" content="Reparo de notebooks em domicílio em Curitiba. Suporte N1 e N2: tela, teclado, bateria, sistema, vírus.">
+<title>IA Computers - Painel de Controle — Notebook</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--naranja:#ff6600;--negro:#111111;--blanco:#ffffff;--verde:#1E9E4A;--gris:#f4f4f4;--azul:#2196F3}
+:root{--naranja:#ff6600;--negro:#111;--verde:#1E9E4A;--azul:#2196F3;--rojo:#e53935;--gris:#f4f4f4}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',Arial,sans-serif}
-body{background:var(--gris);color:#222;-webkit-tap-highlight-color:transparent}
-.topbar{background:var(--blanco);text-align:center;padding:16px 14px 14px;border-bottom:3px solid var(--naranja)}
-.topbar.tb-name{font-size:22px;font-weight:800;letter-spacing:1px;color:var(--negro)}
-.topbar.tb-name span{color:var(--naranja)}
-.topbar.tb-serv{font-size:14px;font-weight:600;color:#555;margin-top:4px}
-.topbar.tb-info{margin-top:10px;font-size:13px;color:#444}
-.topbar.tb-info div{padding:5px 0}
-.topbar.tb-info a{color:var(--negro);font-weight:700;text-decoration:none}
-header{background:var(--negro);color:var(--blanco);padding:22px 16px;text-align:center;border-bottom:4px solid var(--naranja);position:sticky;top:0;z-index:50}
-header h1{font-size:24px;font-weight:800;letter-spacing:.5px}header h1 span{color:var(--naranja)}
-.hero{background:linear-gradient(135deg,#111111 60%,#2a1503);color:var(--blanco);text-align:center;padding:34px 18px}
-.hero.nb{font-size:44px}
-.hero h2{font-size:24px;font-weight:800;margin:10px 0}.hero h2 span{color:var(--naranja)}
-.hero p{font-size:14px;color:#ddd;margin-bottom:18px;line-height:1.5}
-.cta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.cta{padding:14px 22px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;display:inline-block;border:none;cursor:pointer}
-.cta-wpp{background:var(--verde);color:var(--blanco)}
-.cta-nar{background:var(--naranja);color:var(--blanco)}
-.cta-line{background:transparent;color:var(--blanco);border:2px solid var(--blanco)}
-.wrap{max-width:600px;margin:0 auto;padding:14px}
-.card{background:var(--blanco);border-radius:14px;padding:20px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-.card h2{font-size:17px;font-weight:800;margin-bottom:4px;border-left:5px solid var(--naranja);padding-left:10px;color:var(--negro)}
-.card.sub{font-size:13px;color:#666;margin-bottom:14px;padding-left:15px}
-.card.center{text-align:center}
-.card.center h2{border-left:none;padding-left:0}
-.steps3{display:flex;gap:8px;text-align:center;margin-top:6px}
-.steps3 div{flex:1;background:var(--gris);border-radius:10px;padding:12px 6px;font-size:12px;color:#333}
-.steps3 b{display:block;font-size:22px;margin-bottom:4px}
-.wz-opt{display:block;width:100%;text-align:left;padding:14px;margin:8px 0;border:2px solid #e0e0e0;border-radius:10px;background:var(--blanco);font-size:15px;font-weight:600;cursor:pointer;color:#222}
-.wz-opt:active{border-color:var(--naranja);background:#fff3e8}
-.wz-back{background:none;border:none;color:var(--naranja);font-weight:700;font-size:14px;cursor:pointer;margin-bottom:6px}
-.wz-result{background:#eaf7ee;border:2px solid var(--verde);border-radius:12px;padding:16px;text-align:center}
-.wz-result h3{font-size:18px;margin-bottom:8px;color:var(--negro)}
-.wz-result.lvl{display:inline-block;padding:6px 18px;border-radius:20px;color:var(--blanco);font-weight:800;margin:6px 0}
-.lvl.N1{background:var(--azul)}.lvl.N2{background:var(--naranja)}
-.wz-result ul{text-align:left;font-size:13px;margin:10px 0;list-style:none;color:#333}
-.wz-result ul li{margin:5px 0}
-.nivel-card{border:2px solid #e0e0e0;border-radius:12px;margin-bottom:10px;overflow:hidden;text-align:left}
-.nivel-head{padding:15px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:15px;color:var(--negro)}
-.nivel-head.N1{background:#e8f2fe}.nivel-head.N2{background:#fff1e3}
-.nivel-body{display:none;padding:14px;font-size:13.5px;background:#fafafa;color:#333}
-.nivel-body.open{display:block}
-.nivel-body li{margin:7px 0;list-style:none}
-.pick{margin-top:10px}.pick button{width:100%;padding:12px;border:2px solid var(--naranja);background:var(--blanco);color:var(--naranja);border-radius:10px;font-weight:700;cursor:pointer;font-size:15px}
-.pick button.sel{background:var(--naranja);color:var(--blanco)}
-.srv-list{text-align:center}
-.srv-item{padding:13px 8px;border-bottom:1px solid #eee}
-.srv-item:last-child{border-bottom:none}
-.srv-item b{display:block;font-size:15px;color:var(--negro);margin-bottom:7px}
-.tag{display:inline-block;font-size:11px;font-weight:800;padding:4px 16px;border-radius:12px;color:var(--blanco)}
-.tag.N1{background:var(--azul)}.tag.N2{background:var(--naranja)}
-.serv-grid{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
-.serv-grid label{flex:1 1 30%;border:2px solid #e0e0e0;border-radius:10px;padding:13px 6px;text-align:center;cursor:pointer;font-size:13px;font-weight:600;color:#333;background:var(--blanco)}
-.serv-grid input{display:none}
-.serv-grid label.sel{border-color:var(--naranja);background:#fff3e8}
-input,select,textarea{width:100%;padding:13px;margin:6px 0;border:1.5px solid #ddd;border-radius:10px;font-size:15px;font-family:inherit;background:var(--blanco);color:#222}
-input:focus,select,textarea:focus{border-color:var(--naranja);outline:none}
-textarea{height:84px;resize:vertical}
+body{background:var(--gris);padding-bottom:76px}
+header{background:var(--negro);color:#fff;padding:14px;text-align:center;border-bottom:4px solid var(--naranja);position:sticky;top:0;z-index:50}
+header h1{font-size:18px;font-weight:800}header h1 span{color:var(--naranja)}
+.container{max-width:640px;margin:0 auto;padding:12px}
+.tab{display:none}.tab.on{display:block}
+.bottomnav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:2px solid #eee;display:flex;z-index:60}
+.bottomnav button{flex:1;background:none;border:none;padding:12px 4px;font-size:12px;font-weight:700;color:#888;cursor:pointer}
+.bottomnav button.on{color:var(--naranja)}
+.bottomnav button b{display:block;font-size:20px}
+.cards{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.cards.c{flex:1;min-width:100px;background:#fff;border-radius:12px;padding:12px;text-align:center;box-shadow:0 2px 4px rgba(0,0,0,.07)}
+.cards.c b{font-size:19px;display:block}.cards.c small{color:#888;font-size:11px}
+.c.ing b{color:var(--verde)}.c.gas b{color:var(--rojo)}.c.bal b{color:var(--naranja)}
+.filters{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.filters button{flex:1;padding:9px;border:2px solid #ddd;background:#fff;border-radius:9px;font-weight:700;cursor:pointer;font-size:12px;min-width:58px}
+.filters button.on{border-color:var(--naranja);background:#fff3e8}
+.ticket{background:#fff;border-radius:12px;padding:14px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,.08);border-left:5px solid #999}
+.ticket.N1{border-left-color:var(--azul)}.ticket.N2{border-left-color:var(--naranja)}
+.ticket h3{font-size:14.5px;margin-bottom:6px}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;color:#fff;margin-right:6px}
+.bN1{background:var(--azul)}.bN2{background:var(--naranja)}
+.st{font-size:11px;padding:3px 10px;border-radius:12px;background:#eee;font-weight:600}
+.ticket p{font-size:13px;margin:4px 0;color:#444}.ticket.big{font-size:14px;font-weight:700;color:#111}
+.actions{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.actions button,.actions a{flex:1;padding:10px;border:none;border-radius:9px;font-weight:700;cursor:pointer;font-size:12.5px;text-align:center;text-decoration:none;min-width:76px}
+.wa{background:var(--verde);color:#fff}.map{background:#4285F4;color:#fff}.del{background:var(--rojo);color:#fff}.cob{background:var(--naranja);color:#fff}
+.empty{text-align:center;color:#999;padding:36px;font-size:14px}
+select,input,textarea{padding:10px;border-radius:9px;border:1.5px solid #ddd;font-size:14px;width:100%;margin:5px 0;font-family:inherit}
+select{margin-top:8px}
+.hoy{background:#fff8e1;border:2px solid #ffc107;border-radius:10px;padding:10px;margin-bottom:12px;font-size:13px;font-weight:700}
 .row2{display:flex;gap:8px}.row2>*{flex:1}
-.flabel{display:block;font-size:12px;font-weight:700;color:#555;margin:8px 0 2px;text-align:left}
-#turno:invalid{color:#999}
-#turno option{color:#222}
-.btn-wpp{background:var(--verde);color:var(--blanco);border:none;width:100%;padding:16px;font-size:16px;font-weight:800;border-radius:12px;cursor:pointer;margin-top:10px}
-.btn-wpp:active{transform:scale(.98)}
-.note{font-size:12px;color:#666;text-align:center;margin-top:10px;line-height:1.6}
-.badgeN{font-size:11px;background:var(--negro);color:var(--blanco);padding:4px 12px;border-radius:12px;font-weight:700}
-footer{background:var(--negro);color:#aaa;text-align:center;padding:24px 16px;font-size:12.5px;line-height:2;margin-top:10px}
-footer b{color:var(--blanco);font-size:15px}
-footer.f-serv{color:var(--naranja);font-weight:700}
-footer.tel{color:var(--verde);font-size:16px;font-weight:800;text-decoration:none}
-.wa-float{position:fixed;bottom:18px;right:18px;background:var(--verde);color:var(--blanco);width:60px;height:60px;border-radius:50%;font-size:30px;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.35);z-index:60}
-.faq details{background:var(--gris);border-radius:10px;padding:13px;margin:8px 0;font-size:13.5px;text-align:left}
-.faq summary{font-weight:700;cursor:pointer;color:var(--negro)}
-.faq p{margin-top:8px;color:#555;line-height:1.6}
+.flabel{display:block;font-size:12px;font-weight:700;color:#555;margin:8px 0 2px}
+h2.sec{font-size:16px;font-weight:800;margin:14px 0 8px;border-left:5px solid var(--naranja);padding-left:10px}
+.mov{background:#fff;border-radius:10px;padding:12px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.mov.v{font-weight:800;font-size:15px}.mov.v.in{color:var(--verde)}.mov.v.out{color:var(--rojo)}
+.mov small{color:#888;font-size:11px;display:block}
+.mov button{background:none;border:none;color:var(--rojo);font-size:16px;cursor:pointer;padding:4px 8px}
+.bar-row{margin:8px 0;font-size:13px}
+.bar-row.lbl{display:flex;justify-content:space-between;font-weight:600;margin-bottom:4px}
+.bar{height:14px;background:#e8e8e8;border-radius:8px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:8px;background:var(--naranja)}
+.bar i.az{background:var(--azul)}.bar i.vd{background:var(--verde)}
+.cardbox{background:#fff;border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,.07)}
+.btn-add{background:var(--negro);color:#fff;border:none;width:100%;padding:13px;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;margin-top:6px}
+.seg{display:flex;gap:8px;margin:5px 0}.seg label{flex:1;text-align:center;padding:10px;border:2px solid #ddd;border-radius:9px;font-weight:700;font-size:13px;cursor:pointer}
+.seg input{display:none}.seg label.sel-in{border-color:var(--verde);background:#e8f7ee;color:var(--verde)}.seg label.sel-out{border-color:var(--rojo);background:#fdecea;color:var(--rojo)}
+.kpi{font-size:12px;color:#666;margin-top:6px;line-height:1.7}
+.kpi b{color:#111}
 </style>
 </head>
 <body>
-<div class="topbar">
-<div class="tb-name">IA <span>COMPUTERS</span></div>
-<div class="tb-serv">🔧 Manutenção de notebooks</div>
-<div class="tb-info">
-<div>📍 Curitiba, Paraná, Brasil</div>
-<div>📱 <a href="https://wa.me/5541997294355">+55 (41) 99729-4355</a></div>
-<div>✉️ <a href="mailto:iacomputersbr@gmail.com">iacomputersbr@gmail.com</a></div>
-<div>🕐 Seg a Sex 8h–17h • Sáb 8h–12h</div>
+<header><h1>IA <span>COMPUTERS</span> — Notebook</h1></header>
+<div class="container">
+
+<div class="tab on" id="tab-visitas">
+<div class="hoy" id="hoy"></div>
+<div class="cards">
+<div class="c"><b id="c-total">0</b><small>Visitas</small></div>
+<div class="c"><b id="c-n1">0</b><small>N1</small></div>
+<div class="c"><b id="c-n2">0</b><small>N2</small></div>
+<div class="c"><b id="c-hoy">0</b><small>Hoje</small></div>
 </div>
+<div class="filters">
+<button class="on" onclick="filtrar('todas',this)">Todas</button>
+<button onclick="filtrar('N1',this)">N1</button>
+<button onclick="filtrar('N2',this)">N2</button>
+<button onclick="filtrar('Agendada',this)">Agend.</button>
+<button onclick="filtrar('hoje',this)">Hoje</button>
 </div>
-<header>
-<h1>Especialistas em <span>Notebook</span></h1>
-</header>
-<div class="hero">
-<div class="nb">💻</div>
-<h2>Seu notebook <span>reparado</span> sem sair de casa</h2>
-<p>Reparo de notebooks em domicílio: tela, teclado, bateria, sistema e mais. Atendemos em Curitiba e região.</p>
-<div class="cta-row">
-<a class="cta cta-wpp" href="#reserva">Agendar visita</a>
-<a class="cta cta-line" href="#asesoria">Assessoria grátis</a>
+<div id="lista"></div>
 </div>
+
+<div class="tab" id="tab-finanzas">
+<h2 class="sec">Resumo do mês</h2>
+<div class="cards">
+<div class="c ing"><b id="f-ing">R$ 0</b><small>Receitas</small></div>
+<div class="c gas"><b id="f-gas">R$ 0</b><small>Despesas</small></div>
+<div class="c bal"><b id="f-bal">R$ 0</b><small>Saldo</small></div>
 </div>
-<div class="wrap">
-<div class="card" id="asesoria">
-<h2>Assessoria gratuita</h2>
-<p class="sub">Escolha o problema do seu notebook e descubra qual nível de suporte você precisa.</p>
-<div id="wz"></div>
+<h2 class="sec">Registrar movimento</h2>
+<div class="cardbox">
+<div class="seg" id="seg-tipo">
+<label class="sel-in"><input type="radio" name="mtipo" value="in" checked>⬆ Receita</label>
+<label><input type="radio" name="mtipo" value="out">⬇ Despesa</label>
 </div>
-<div class="card">
-<h2>Níveis de suporte para notebook</h2>
-<p class="sub">Toque em cada nível para ver tudo o que inclui.</p>
-<div class="nivel-card">
-<div class="nivel-head N1" onclick="tog('b1')"><span>Suporte N1 — Básico</span><span>▼</span></div>
-<div class="nivel-body" id="b1"><ul id="t-n1l"></ul><div class="pick"><button onclick="selN('N1',this)">Escolher N1</button></div></div>
-</div>
-<div class="nivel-card">
-<div class="nivel-head N2" onclick="tog('b2')"><span>Suporte N2 — Avançado</span><span>▼</span></div>
-<div class="nivel-body" id="b2"><ul id="t-n2l"></ul><div class="pick"><button onclick="selN('N2',this)">Escolher N2</button></div></div>
-</div>
-</div>
-<div class="card center">
-<h2>Serviços de Notebook</h2>
-<p class="sub" style="padding-left:0">Confira tudo o que fazemos. Consulte os valores pelo WhatsApp.</p>
-<div class="srv-list" id="srv-list"></div>
-<a class="btn-wpp" style="display:block;text-align:center;text-decoration:none;box-sizing:border-box" target="_blank" href="https://wa.me/5541997294355?text=Ol%C3%A1%2C%20quero%20consultar%20valores%20de%20servi%C3%A7os%20para%20notebook">Consultar valores pelo WhatsApp</a>
-</div>
-<div class="card" id="reserva">
-<h2>Reserve sua visita em domicílio</h2>
-<p class="sub">Complete os dados e entramos em contato pelo WhatsApp para confirmar.</p>
-<div class="serv-grid" id="servicios">
-<label><input type="radio" name="srv" value="Manutenção / limpeza">Manutenção</label>
-<label><input type="radio" name="srv" value="Tela">Tela</label>
-<label><input type="radio" name="srv" value="Teclado">Teclado</label>
-<label><input type="radio" name="srv" value="Bateria">Bateria</label>
-<label><input type="radio" name="srv" value="Disco / Memória (upgrade)">Disco / Memória</label>
-<label><input type="radio" name="srv" value="Sistema / vírus">Sistema / Vírus</label>
-</div>
-<input type="text" id="marca" placeholder="Marca e modelo (ex: Lenovo IdeaPad 3)">
+<input type="text" id="m-desc" placeholder="Descrição (ex: Visita NB-123456, compra de peça)">
 <div class="row2">
-<div><label class="flabel" for="fecha">📅 Data da visita</label><input type="date" id="fecha"></div>
-<div><label class="flabel" for="turno">⏰ Turno</label><select id="turno" required>
-<option value="" disabled selected></option>
-<option value="Manhã (8h-12h)">Manhã (8h–12h)</option>
-<option value="Tarde (13h-18h)">Tarde (13h–18h)</option>
-<option value="Noite (18h-21h)">Noite (18h–21h)</option>
-</select></div>
+<div><label class="flabel">Valor R$</label><input type="number" id="m-valor" min="0" step="0.01"></div>
+<div><label class="flabel">Data</label><input type="date" id="m-fecha"></div>
 </div>
-<input type="text" id="dir" placeholder="Endereço: rua, número, bairro">
-<input type="text" id="ref" placeholder="Referência (opcional)">
-<input type="text" id="nombre" placeholder="Seu nome">
-<input type="tel" id="tel" placeholder="Seu WhatsApp com DDD">
-<textarea id="desc" placeholder="Descreva o problema do seu notebook..."></textarea>
-<button class="btn-wpp" onclick="enviar()">Agendar visita pelo WhatsApp</button>
-<p class="note"><span class="badgeN">Nível: <span id="nvl-show">—</span></span><br>Se a assessoria recomendou um nível, ele já vem selecionado.</p>
+<button class="btn-add" onclick="addMov()">Salvar</button>
 </div>
-<div class="card">
-<h2>Como funciona?</h2>
-<div class="steps3">
-<div><b>1️⃣</b><span>Agende grátis por aqui</span></div>
-<div><b>2️⃣</b><span>Vamos até sua casa ou empresa</span></div>
-<div><b>3️⃣</b><span>Pague ao finalizar</span></div>
+<h2 class="sec">Movimentos</h2>
+<div class="filters">
+<button class="on" onclick="ffiltrar('todos',this)">Todos</button>
+<button onclick="ffiltrar('in',this)">Receitas</button>
+<button onclick="ffiltrar('out',this)">Despesas</button>
 </div>
+<div id="movs"></div>
 </div>
-<div class="card faq">
-<h2>Perguntas frequentes</h2>
-<div id="faq-rows"></div>
+
+<div class="tab" id="tab-reportes">
+<h2 class="sec">Visitas por nível</h2>
+<div class="cardbox" id="rep-nivel"></div>
+<h2 class="sec">Visitas por estado</h2>
+<div class="cardbox" id="rep-estado"></div>
+<h2 class="sec">Receitas últimos 6 meses</h2>
+<div class="cardbox" id="rep-mes"></div>
+<h2 class="sec">Serviços mais pedidos</h2>
+<div class="cardbox" id="rep-serv"></div>
+<h2 class="sec">Indicadores</h2>
+<div class="cardbox"><div class="kpi" id="rep-kpi"></div></div>
 </div>
+
 </div>
-<footer>
-<b>IA COMPUTERS</b><br>
-<span class="f-serv">Manutenção de notebooks</span><br>
-Curitiba, Paraná, Brasil<br>
-<a class="tel" href="https://wa.me/5541997294355">+55 (41) 99729-4355</a><br>
-✉️ iacomputersbr@gmail.com<br>
-Seg a Sex 8h–17h • Sáb 8h–12h
-</footer>
-<a class="wa-float" href="https://wa.me/5541997294355?text=Ol%C3%A1%2C%20preciso%20reparar%20meu%20notebook" target="_blank">✆</a>
+
+<nav class="bottomnav">
+<button class="on" onclick="goTab('visitas',this)"><b>🏠</b>Visitas</button>
+<button onclick="goTab('finanzas',this)"><b>💰</b>Finanças</button>
+<button onclick="goTab('reportes',this)"><b>📊</b>Relatórios</button>
+</nav>
+
 <script>
-var WA="5541997294355";
-var SERVICOS=[
- {s:"Remoção de vírus / otimização",n:"N1"},
- {s:"Instalação de Windows / Linux",n:"N1"},
- {s:"Limpeza interna + pasta térmica",n:"N1"},
- {s:"Troca de tela",n:"N2"},
- {s:"Troca de teclado",n:"N2"},
- {s:"Troca de bateria",n:"N2"},
- {s:"Upgrade para SSD + sistema",n:"N2"},
- {s:"Expansão de memória RAM",n:"N2"},
- {s:"Recuperação de dados",n:"N2"},
- {s:"Reparo de placa-mãe",n:"N2"}
-];
-var N1L=["Remoção de vírus e malware","Notebook lento: otimização completa","Instalação de Windows / Linux","Programas, drivers e antivírus","Limpeza interna + troca de pasta térmica","Backup dos seus arquivos","Configuração de WiFi e internet"];
-var N2L=["Troca de tela (quebrada ou com defeito)","Troca de teclado","Troca de bateria","Upgrade para SSD / mais memória RAM","Reparo de dobradiças e carcaça","Reparo de placa-mãe","Recuperação de dados perdidos","Superaquecimento: cooler e sistema térmico"];
-var SINTOMAS=[
- ["Está muito lento","N1","Otimização e limpeza"],
- ["Tem vírus ou anúncios","N1","Remoção de vírus"],
- ["Não liga","N2","Diagnóstico de hardware"],
- ["Desliga ou esquenta muito","N2","Sistema térmico + pasta"],
- ["Tela quebrada ou com defeito","N2","Troca de tela"],
- ["Teclado não funciona","N2","Troca de teclado"],
- ["Bateria não carrega ou dura pouco","N2","Troca de bateria"],
- ["Quero mais velocidade","N2","Upgrade SSD / RAM"],
- ["Instalar o Windows","N1","Instalação de sistema"],
- ["Perdi meus arquivos","N2","Recuperação de dados"],
- ["Cooler faz barulho","N1","Limpeza interna"],
- ["Dobradiça quebrada ou folgada","N2","Reparo de dobradiça"]
-];
-var FAQ=[
- ["Quanto tempo dura o reparo?","A maioria dos serviços N1 resolve em 1–2 horas na sua casa. Os N2 com peças podem exigir levar o equipamento à oficina por 24–48h."],
- ["Tela e teclado têm garantia?","Sim, 90 dias de garantia na mão de obra e nas peças instaladas."],
- ["Quais marcas vocês atendem?","Todas: Lenovo, HP, Dell, Asus, Acer, Samsung, Apple e outras. Informe marca e modelo ao reservar."]
-];
-var NIVEL="";
-function tog(id){document.getElementById(id).classList.toggle('open');}
-function selN(n,btn){NIVEL=n;document.getElementById('nvl-show').textContent=n;
-var bs=document.querySelectorAll('.pick button');for(var i=0;i<bs.length;i++)bs[i].classList.remove('sel');if(btn)btn.classList.add('sel');}
-var labs=document.querySelectorAll('#servicios label');
-for(var i=0;i<labs.length;i++){labs[i].addEventListener('click',function(){var ls=document.querySelectorAll('#servicios label');for(var j=0;j<ls.length;j++)ls[j].classList.remove('sel');this.classList.add('sel');});}
-function paintLists(){
-var a="";for(var i=0;i<N1L.length;i++)a+="<li>✅ "+N1L[i]+"</li>";document.getElementById('t-n1l').innerHTML=a;
-var b="";for(var j=0;j<N2L.length;j++)b+="<li>🔧 "+N2L[j]+"</li>";document.getElementById('t-n2l').innerHTML=b;
-var sl="";for(var k=0;k<SERVICOS.length;k++){sl+="<div class='srv-item'><b>"+SERVICOS[k].s+"</b><span class='tag "+SERVICOS[k].n+"'>"+SERVICOS[k].n+"</span></div>";}
-document.getElementById('srv-list').innerHTML=sl;
-var fq="";for(var f=0;f<FAQ.length;f++){fq+="<details><summary>"+FAQ[f][0]+"</summary><p>"+FAQ[f][1]+"</p></details>";}
-document.getElementById('faq-rows').innerHTML=fq;}
-var wzRes=null;
-function wzRender(){var box=document.getElementById('wz'),h="";
-if(wzRes===null){h="<p style='font-weight:700;margin-bottom:8px'>💻 Qual é o problema do seu notebook?</p>";
-for(var i=0;i<SINTOMAS.length;i++){h+="<button class='wz-opt' onclick='wzEnd("+i+")'>"+SINTOMAS[i][0]+"</button>";}
-}else{var s=SINTOMAS[wzRes],lst=s[1]==="N1"?N1L:N2L,li="";
-for(var k=0;k<lst.length;k++)li+="<li>"+(s[1]==="N1"?"✅":"🔧")+" "+lst[k]+"</li>";
-h="<button class='wz-back' onclick='wzBack()'>← Voltar</button><div class='wz-result'><h3>Recomendamos</h3><span class='lvl "+s[1]+"'>"+s[1]+" — "+s[2]+"</span><p style='font-size:13px;font-weight:700;margin-top:8px'>Seu nível inclui:</p><ul>"+li+"</ul><button class='cta cta-nar' style='width:100%;margin:6px 0' onclick=\"wzGo('"+s[1]+"')\">Agendar visita com este nível</button><a class='cta cta-wpp' style='width:100%;box-sizing:border-box' target='_blank' href='https://wa.me/"+WA+"?text="+encodeURIComponent("Recomendação: "+s[1]+" - "+s[2]+" ("+s[0]+")")+"'>Consultar pelo WhatsApp</a></div>";}
+function goTab(t,btn){var ts=document.querySelectorAll('.tab');for(var i=0;i<ts.length;i++)ts[i].classList.remove('on');
+document.getElementById('tab-'+t).classList.add('on');
+var bs=document.querySelectorAll('.bottomnav button');for(var j=0;j<bs.length;j++)bs[j].classList.remove('on');btn.classList.add('on');
+if(t==='finanzas')renderFin();if(t==='reportes')renderRep();window.scrollTo(0,0);}
+function getV(){var v=[];try{v=JSON.parse(localStorage.getItem('ia_visitas')||'[]');}catch(e){}return v;}
+function saveV(v){try{localStorage.setItem('ia_visitas',JSON.stringify(v));}catch(e){}}
+function getM(){var v=[];try{v=JSON.parse(localStorage.getItem('ia_money')||'[]');}catch(e){}return v;}
+function saveM(v){try{localStorage.setItem('ia_money',JSON.stringify(v));}catch(e){}}
+function hoyStr(){return new Date().toISOString().slice(0,10);}
+function fmt(n){return 'R$ '+Number(n).toFixed(2).replace('.',',');}
+var filtro='todas';
+function filtrar(f,btn){filtro=f;var bs=document.querySelectorAll('#tab-visitas.filters button');for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');btn.classList.add('on');renderV();}
+function renderV(){
+var all=getV(),hs=hoyStr();
+document.getElementById('hoy').textContent='Hoje '+new Date().toLocaleDateString()+' — '+all.filter(function(t){return t.fecha===hs&&t.estado!=='Finalizada'&&t.estado!=='Cancelada';}).length+' visita(s) pendente(s)';
+document.getElementById('c-total').textContent=all.length;
+document.getElementById('c-n1').textContent=all.filter(function(t){return t.nvl==='N1';}).length;
+document.getElementById('c-n2').textContent=all.filter(function(t){return t.nvl==='N2';}).length;
+document.getElementById('c-hoy').textContent=all.filter(function(t){return t.fecha===hs;}).length;
+var list=all.slice().sort(function(a,b){return a.fecha<b.fecha?-1:1;});
+if(filtro==='N1'||filtro==='N2')list=list.filter(function(t){return t.nvl===filtro;});
+if(filtro==='Agendada')list=list.filter(function(t){return t.estado==='Agendada';});
+if(filtro==='hoje')list=list.filter(function(t){return t.fecha===hs;});
+var box=document.getElementById('lista');
+if(!list.length){box.innerHTML='<div class="empty">Sem visitas.<br>Compartilhe sua página para agendar.</div>';return;}
+var h='';
+for(var k=0;k<list.length;k++){var t=list[k],idx=all.indexOf(t);
+var maps='https://www.google.com/maps/search/'+encodeURIComponent(t.dir||'');
+h+='<div class="ticket '+t.nvl+'"><h3>'+t.tk+' <span class="badge '+(t.nvl==='N1'?'bN1':'bN2')+'">'+t.nvl+'</span><span class="st">'+t.estado+'</span></h3>'
++'<p class="big">💻 Notebook'+(t.marca?' ('+t.marca+')':'')+'</p>'
++'<p class="big">'+t.fecha+' — '+t.turno+'</p><p>📌 '+(t.srv||'-')+'</p>'
++'<p class="big">👤 '+t.nom+' — 📱 '+t.tel+'</p><p>📍 '+(t.dir||'-')+(t.ref?' ('+t.ref+')':'')+'</p><p>📝 '+(t.des||'-')+'</p>'
++(t.valor?'<p class="big">💰 '+fmt(t.valor)+(t.cobrado?' ✓ recebido':'')+'</p>':'')
++'<div class="row2"><div><label class="flabel">Estado</label><select onchange="estado('+idx+',this.value)">'
++'<option'+(t.estado==='Agendada'?' selected':'')+'>Agendada</option>'
++'<option'+(t.estado==='Confirmada'?' selected':'')+'>Confirmada</option>'
++'<option'+(t.estado==='En camino'?' selected':'')+'>En camino</option>'
++'<option'+(t.estado==='Finalizada'?' selected':'')+'>Finalizada</option>'
++'<option'+(t.estado==='Cancelada'?' selected':'')+'>Cancelada</option></select></div>'
++'<div><label class="flabel">Valor R$</label><input type="number" value="'+(t.valor||'')+'" id="val-'+idx+'" min="0" step="0.01"></div></div>'
++'<div class="actions">'
++'<a class="wa" href="https://wa.me/55'+String(t.tel||'').replace(/\D/g,'')+'?text='+encodeURIComponent('Olá '+t.nom+', sou da IA Computers. Confirmo sua visita '+t.tk+' em '+t.fecha+' ('+t.turno+').')+'" target="_blank">WhatsApp</a>'
++'<a class="map" href="'+maps+'" target="_blank">Rota</a>'
++(t.estado==='Finalizada'&&t.valor&&!t.cobrado?'<button class="cob" onclick="cobrar('+idx+')">Receber</button>':'')
++'<button class="del" onclick="borrar('+idx+')">✕</button>'
++'</div></div>';}
 box.innerHTML=h;}
-function wzBack(){wzRes=null;wzRender();}
-function wzEnd(j){wzRes=j;wzRender();}
-function wzGo(n){selN(n,null);document.getElementById('reserva').scrollIntoView({behavior:'smooth'});}
-function enviar(){
-var srv="";var rs=document.querySelectorAll('input[name=srv]');for(var i=0;i<rs.length;i++)if(rs[i].checked)srv=rs[i].value;
-var marca=document.getElementById('marca').value.trim();
-var fecha=document.getElementById('fecha').value,turno=document.getElementById('turno').value;
-var dir=document.getElementById('dir').value.trim(),ref=document.getElementById('ref').value.trim();
-var nom=document.getElementById('nombre').value.trim(),tel=document.getElementById('tel').value.trim();
-var des=document.getElementById('desc').value.trim();
-if(!NIVEL){alert("Escolha o nível N1 ou N2.");return;}
-if(!srv){alert("Escolha o serviço.");return;}
-if(!fecha||!turno){alert("Escolha data e turno.");return;}
-if(!dir||!nom||!tel){alert("Complete endereço, nome e WhatsApp.");return;}
-var tk='NB-'+Date.now().toString().slice(-6);
-var msg='VISITA '+tk+'%0AEquipamento: Notebook'+(marca?' ('+encodeURIComponent(marca)+')':'')+'%0ANível: '+NIVEL+'%0AServiço: '+encodeURIComponent(srv)+'%0AData: '+fecha+'%0ATurno: '+encodeURIComponent(turno)+'%0AEndereço: '+encodeURIComponent(dir)+(ref?' ('+encodeURIComponent(ref)+')':'')+'%0ACliente: '+encodeURIComponent(nom)+'%0ATel: '+encodeURIComponent(tel)+'%0AProblema: '+encodeURIComponent(des||'-');
-var v=[];try{v=JSON.parse(localStorage.getItem('ia_visitas')||'[]');}catch(e){}
-v.unshift({tk:tk,nvl:NIVEL,srv:srv,marca:marca,fecha:fecha,turno:turno,dir:dir,ref:ref,nom:nom,tel:tel,des:des,estado:'Agendada',valor:'',cobrado:false});
-try{localStorage.setItem('ia_visitas',JSON.stringify(v));}catch(e){}
-window.open('https://wa.me/'+WA+'?text='+msg,'_blank');
-alert('Visita '+tk+' registrada. Entraremos em contato para confirmar.');}
-paintLists();wzRender();
+function estado(i,v){var t=getV();t[i].estado=v;saveV(t);renderV();}
+function borrar(i){if(confirm('Apagar esta visita?')){var t=getV();t.splice(i,1);saveV(t);renderV();}}
+function cobrar(i){var t=getM(),m=getM();var val=parseFloat(t[i].valor)||0;if(val<=0){alert('Informe o valor recebido primeiro.');return;}
+m.unshift({id:Date.now(),tipo:'in',desc:'Recebimento visita '+t[i].tk+' (Notebook '+(t[i].srv||'')+' '+t[i].nvl+')',valor:val,fecha:hoyStr()});
+t[i].cobrado=true;saveM(m);saveV(t);renderV();alert('Recebimento registrado em Finanças.');}
+document.addEventListener('change',function(e){if(e.target&&e.target.id&&e.target.id.indexOf('val-')===0){var t=getV();var i=parseInt(e.target.id.split('-')[1]);t[i].valor=e.target.value;saveV(t);renderV();}});
+var ff='todos',mtipo='in';
+var seg=document.querySelectorAll('#seg-tipo label');
+for(var si=0;si<seg.length;si++){seg[si].addEventListener('click',function(){for(var j=0;j<seg.length;j++){seg[j].classList.remove('sel-in');seg[j].classList.remove('sel-out');}
+var r=this.querySelector('input');mtipo=r.value;this.classList.add(mtipo==='in'?'sel-in':'sel-out');});}
+document.getElementById('m-fecha').value=hoyStr();
+function addMov(){var d=document.getElementById('m-desc').value.trim(),v=parseFloat(document.getElementById('m-valor').value),f=document.getElementById('m-fecha').value||hoyStr();
+if(!d||!(v>0)){alert('Descrição e valor, por favor.');return;}
+var m=getM();m.unshift({id:Date.now(),tipo:mtipo,desc:d,valor:v,fecha:f});saveM(m);
+document.getElementById('m-desc').value='';document.getElementById('m-valor').value='';renderFin();}
+function ffiltrar(f,btn){ff=f;var bs=document.querySelectorAll('#tab-finanzas.filters button');for(var i=0;i<bs.length;i++)bs[i].classList.remove('on');btn.classList.add('on');renderFin();}
+function delMov(id){if(confirm('Apagar este movimento?')){var m=getM().filter(function(x){return x.id!==id;});saveM(m);renderFin();}}
+function renderFin(){var m=getM(),mes=hoyStr().slice(0,7);
+var ing=m.filter(function(x){return x.tipo==='in'&&x.fecha.slice(0,7)===mes;}).reduce(function(a,x){return a+ +x.valor;},0);
+var gas=m.filter(function(x){return x.tipo==='out'&&x.fecha.slice(0,7)===mes;}).reduce(function(a,x){return a+ +x.valor;},0);
+document.getElementById('f-ing').textContent=fmt(ing);
+document.getElementById('f-gas').textContent=fmt(gas);
+document.getElementById('f-bal').textContent=fmt(ing-gas);
+var list=m.slice();if(ff!=='todos')list=list.filter(function(x){return x.tipo===ff;});
+var box=document.getElementById('movs');
+if(!list.length){box.innerHTML='<div class="empty">Sem movimentos.<br>Registre receitas e despesas aqui.</div>';return;}
+var h='';for(var i=0;i<list.length;i++){var x=list[i];
+h+='<div class="mov"><div><b style="font-size:13.5px">'+x.desc+'</b><small>'+x.fecha+'</small></div><div style="display:flex;align-items:center;gap:4px"><span class="v '+(x.tipo==='in'?'in':'out')+'">'+(x.tipo==='in'?'+':'−')+fmt(x.valor)+'</span><button onclick="delMov('+x.id+')">🗑</button></div></div>';}
+box.innerHTML=h;}
+function bars(el,items,color){var max=0,i;for(i=0;i<items.length;i++)if(items[i][1]>max)max=items[i][1];if(max===0)max=1;
+var h='';for(i=0;i<items.length;i++){var pct=Math.round(items[i][1]/max*100);
+h+='<div class="bar-row"><div class="lbl"><span>'+items[i][0]+'</span><b>'+items[i][2]+'</b></div><div class="bar"><i class="'+color+'" style="width:'+pct+'%"></i></div></div>';}
+document.getElementById(el).innerHTML=h||'<p style="color:#999;font-size:13px">Sem dados ainda.</p>';}
+function renderRep(){var v=getV(),m=getM();
+var n1=v.filter(function(t){return t.nvl==='N1';}).length,n2=v.filter(function(t){return t.nvl==='N2';}).length;
+bars('rep-nivel',[['Suporte N1',n1,n1+' visitas'],['Suporte N2',n2,n2+' visitas']],'az');
+var sts=['Agendada','Confirmada','En camino','Finalizada','Cancelada'],si=[],k;
+for(k=0;k<sts.length;k++){var c=v.filter(function(t){return t.estado===sts[k];}).length;si.push([sts[k],c,c]);}
+bars('rep-estado',si,'');
+var mn=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],mi=[];
+var now=new Date();
+for(k=5;k>=0;k--){var d=new Date(now.getFullYear(),now.getMonth()-k,1);var key=d.toISOString().slice(0,7);
+var ing=m.filter(function(x){return x.tipo==='in'&&x.fecha.slice(0,7)===key;}).reduce(function(a,x){return a+ +x.valor;},0);
+mi.push([mn[d.getMonth()]+' '+d.getFullYear(),ing,fmt(ing)]);}
+bars('rep-mes',mi,'vd');
+var sc={};for(k=0;k<v.length;k++){var s=v[k].srv||'Outro';sc[s]=(sc[s]||0)+1;}
+var sa=[];for(var key2 in sc)sa.push([key2,sc[key2],sc[key2]]);
+sa.sort(function(a,b){return b[1]-a[1];});
+bars('rep-serv',sa.slice(0,6),'');
+var fin=v.filter(function(t){return t.estado==='Finalizada';}).length;
+var totIng=m.filter(function(x){return x.tipo==='in';}).length;
+var nIng=m.filter(function(x){return x.tipo==='in';}).length;
+var prom=nIng>0?totIng/nIng:0;
+var conv=v.length>0?Math.round(fin/v.length*100):0;
+document.getElementById('rep-kpi').innerHTML='• <b>Taxa de finalização:</b> '+conv+'% ('+fin+' de '+v.length+')<br>• <b>Ticket médio:</b> '+fmt(prom)+'<br>• <b>Receitas totais:</b> '+fmt(totIng)+'<br>• <b>Nível mais pedido:</b> '+(n1>=n2?'N1 ('+n1+')':'N2 ('+n2+')');}
+renderV();
 </script>
 </body>
-  </html>
+ </html>
