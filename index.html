@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Especialistas em Notebook — Reparo em Domicílio | Suporte N1/N2</title>
+<meta name="description" content="Reparo de notebooks em domicílio em Curitiba. Suporte N1 e N2: tela, teclado, bateria, sistema, vírus.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--naranja:#ff6600;--negro:#111111;--blanco:#ffffff;--verde:#25D366;--gris:#f4f4f4;--azul:#2196F3}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',Arial,sans-serif}
+body{background:var(--gris);color:#222;-webkit-tap-highlight-color:transparent}
+/* Barra superior de la empresa */
+.topbar{background:#fff;text-align:center;padding:16px 14px 14px;border-bottom:3px solid var(--naranja)}
+.topbar .tb-name{font-size:22px;font-weight:800;letter-spacing:1px;color:var(--negro)}
+.topbar .tb-name span{color:var(--naranja)}
+.topbar .tb-serv{font-size:14px;font-weight:600;color:#555;margin-top:4px}
+.topbar .tb-info{margin-top:10px;font-size:13px;color:#444}
+.topbar .tb-info div{padding:5px 0}
+.topbar .tb-info a{color:var(--negro);font-weight:700;text-decoration:none}
+header{background:var(--negro);color:#fff;padding:22px 16px;text-align:center;border-bottom:4px solid var(--naranja);position:sticky;top:0;z-index:50}
+header h1{font-size:24px;font-weight:800;letter-spacing:.5px}header h1 span{color:var(--naranja)}
+.hero{background:linear-gradient(135deg,#111 60%,#2a1503);color:#fff;text-align:center;padding:34px 18px}
+.hero .nb{font-size:44px}
+.hero h2{font-size:24px;font-weight:800;margin:10px 0}.hero h2 span{color:var(--naranja)}
+.hero p{font-size:14px;color:#ddd;margin-bottom:18px;line-height:1.5}
+.cta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cta{padding:14px 22px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;display:inline-block;border:none;cursor:pointer}
+.cta-wpp{background:var(--verde);color:#fff}
+.cta-nar{background:var(--naranja);color:#fff}
+.cta-line{background:transparent;color:#fff;border:2px solid #fff}
+.wrap{max-width:600px;margin:0 auto;padding:14px}
+.card{background:#fff;border-radius:14px;padding:20px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.card h2{font-size:17px;font-weight:800;margin-bottom:4px;border-left:5px solid var(--naranja);padding-left:10px}
+.card .sub{font-size:13px;color:#666;margin-bottom:14px;padding-left:15px}
+.card.center{text-align:center}
+.card.center h2{border-left:none;padding-left:0}
+.steps3{display:flex;gap:8px;text-align:center;margin-top:6px}
+.steps3 div{flex:1;background:var(--gris);border-radius:10px;padding:12px 6px;font-size:12px}
+.steps3 b{display:block;font-size:22px;margin-bottom:4px}
+.wz-opt{display:block;width:100%;text-align:left;padding:14px;margin:8px 0;border:2px solid #e0e0e0;border-radius:10px;background:#fff;font-size:15px;font-weight:600;cursor:pointer}
+.wz-opt:active{border-color:var(--naranja);background:#fff3e8}
+.wz-back{background:none;border:none;color:var(--naranja);font-weight:700;font-size:14px;cursor:pointer;margin-bottom:6px}
+.wz-result{background:#f0faf2;border:2px solid var(--verde);border-radius:12px;padding:16px;text-align:center}
+.wz-result h3{font-size:18px;margin-bottom:8px}
+.wz-result .lvl{display:inline-block;padding:6px 18px;border-radius:20px;color:#fff;font-weight:800;margin:6px 0}
+.lvl.N1{background:var(--azul)}.lvl.N2{background:var(--naranja)}
+.wz-result ul{text-align:left;font-size:13px;margin:10px 0;list-style:none}
+.wz-result ul li{margin:5px 0}
+.nivel-card{border:2px solid #e0e0e0;border-radius:12px;margin-bottom:10px;overflow:hidden;text-align:left}
+.nivel-head{padding:15px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:15px}
+.nivel-head.N1{background:#e8f2fe}.nivel-head.N2{background:#fff1e3}
+.nivel-body{display:none;padding:14px;font-size:13.5px;background:#fafafa}
+.nivel-body.open{display:block}
+.nivel-body li{margin:7px 0;list-style:none}
+.pick{margin-top:10px}.pick button{width:100%;padding:12px;border:2px solid var(--naranja);background:#fff;color:var(--naranja);border-radius:10px;font-weight:700;cursor:pointer;font-size:15px}
+.pick button.sel{background:var(--naranja);color:#fff}
+/* Servicios centrados, sin precios, N1/N2 debajo */
+.srv-list{text-align:center}
+.srv-item{padding:13px 8px;border-bottom:1px solid #eee}
+.srv-item:last-child{border-bottom:none}
+.srv-item b{display:block;font-size:15px;color:var(--negro);margin-bottom:7px}
+.tag{display:inline-block;font-size:11px;font-weight:800;padding:4px 16px;border-radius:12px;color:#fff}
+.tag.N1{background:var(--azul)}.tag.N2{background:var(--naranja)}
+.serv-grid{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.serv-grid label{flex:1 1 30%;border:2px solid #e0e0e0;border-radius:10px;padding:13px 6px;text-align:center;cursor:pointer;font-size:13px;font-weight:600}
+.serv-grid input{display:none}
+.serv-grid label.sel{border-color:var(--naranja);background:#fff3e8}
+input,select,textarea{width:100%;padding:13px;margin:6px 0;border:1.5px solid #ddd;border-radius:10px;font-size:15px;font-family:inherit;background:#fff}
+input:focus,select,textarea:focus{border-color:var(--naranja);outline:none}
+textarea{height:84px;resize:vertical}
+.row2{display:flex;gap:8px}.row2>*{flex:1}
+.flabel{display:block;font-size:12px;font-weight:700;color:#555;margin:8px 0 2px;text-align:left}
+#turno:invalid{color:#999}
+#turno option{color:#222}
+.btn-wpp{background:var(--verde);color:#fff;border:none;width:100%;padding:16px;font-size:16px;font-weight:800;border-radius:12px;cursor:pointer;margin-top:10px}
+.btn-wpp:active{transform:scale(.98)}
+.note{font-size:12px;color:#666;text-align:center;margin-top:10px;line-height:1.6}
+.badgeN{font-size:11px;background:var(--negro);color:#fff;padding:4px 12px;border-radius:12px;font-weight:700}
+footer{background:var(--negro);color:#aaa;text-align:center;padding:24px 16px;font-size:12.5px;line-height:2;margin-top:10px}
+footer b{color:#fff;font-size:15px}
+footer .f-serv{color:var(--naranja);font-weight:700}
+footer .tel{color:var(--verde);font-size:16px;font-weight:800;text-decoration:none}
+.wa-float{position:fixed;bottom:18px;right:18px;background:var(--verde);color:#fff;width:60px;height:60px;border-radius:50%;font-size:30px;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.35);z-index:60}
+.faq details{background:var(--gris);border-radius:10px;padding:13px;margin:8px 0;font-size:13.5px;text-align:left}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin-top:8px;color:#555;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="topbar">
+<div class="tb-name">IA <span>COMPUTERS</span></div>
+<div class="tb-serv">🔧 Manutenção de notebooks</div>
+<div class="tb-info">
+<div>📍 Curitiba, Paraná, Brasil</div>
+<div>📱 <a href="https://wa.me/5541997294355">+55 (41) 99729-4355</a></div>
+<div>✉️ <a href="mailto:iacomputersbr@gmail.com">iacomputersbr@gmail.com</a></div>
+<div>🕐 Seg a Sex 8h–17h • Sáb 8h–12h</div>
+</div>
+</div>
+<header>
+<h1>Especialistas em <span>Notebook</span></h1>
+</header>
+
+<div class="hero">
+<div class="nb">💻</div>
+<h2>Seu notebook <span>reparado</span> sem sair de casa</h2>
+<p>Reparo de notebooks em domicílio: tela, teclado, bateria, sistema e mais. Atendemos em Curitiba e região.</p>
+<div class="cta-row">
+<a class="cta cta-wpp" href="#reserva">Agendar visita</a>
+<a class="cta cta-line" href="#asesoria">Assessoria grátis</a>
+</div>
+</div>
+
+<div class="wrap">
+
+<div class="card" id="asesoria">
+<h2>Assessoria gratuita</h2>
+<p class="sub">Escolha o problema do seu notebook e descubra qual nível de suporte você precisa.</p>
+<div id="wz"></div>
+</div>
+
+<div class="card">
+<h2>Níveis de suporte para notebook</h2>
+<p class="sub">Toque em cada nível para ver tudo o que inclui.</p>
+<div class="nivel-card">
+<div class="nivel-head N1" onclick="tog('b1')"><span>Suporte N1 — Básico</span><span>▼</span></div>
+<div class="nivel-body" id="b1"><ul id="t-n1l"></ul><div class="pick"><button onclick="selN('N1',this)">Escolher N1</button></div></div>
+</div>
+<div class="nivel-card">
+<div class="nivel-head N2" onclick="tog('b2')"><span>Suporte N2 — Avançado</span><span>▼</span></div>
+<div class="nivel-body" id="b2"><ul id="t-n2l"></ul><div class="pick"><button onclick="selN('N2',this)">Escolher N2</button></div></div>
+</div>
+</div>
+
+<div class="card center">
+<h2>Serviços de Notebook</h2>
+<p class="sub" style="padding-left:0">Confira tudo o que fazemos. Consulte os valores pelo WhatsApp.</p>
+<div class="srv-list" id="srv-list"></div>
+<a class="btn-wpp" style="display:block;text-align:center;text-decoration:none;box-sizing:border-box" target="_blank" href="https://wa.me/5541997294355?text=Ol%C3%A1%2C%20quero%20consultar%20valores%20de%20servi%C3%A7os%20para%20notebook">Consultar valores pelo WhatsApp</a>
+</div>
+
+<div class="card" id="reserva">
+<h2>Reserve sua visita em domicílio</h2>
+<p class="sub">Complete os dados e entramos em contato pelo WhatsApp para confirmar.</p>
+<div class="serv-grid" id="servicios">
+<label><input type="radio" name="srv" value="Manutenção / limpeza">Manutenção</label>
+<label><input type="radio" name="srv" value="Tela">Tela</label>
+<label><input type="radio" name="srv" value="Teclado">Teclado</label>
+<label><input type="radio" name="srv" value="Bateria">Bateria</label>
+<label><input type="radio" name="srv" value="Disco / Memória (upgrade)">Disco / Memória</label>
+<label><input type="radio" name="srv" value="Sistema / vírus">Sistema / Vírus</label>
+</div>
+<input type="text" id="marca" placeholder="Marca e modelo (ex: Lenovo IdeaPad 3)">
+<div class="row2">
+<div><label class="flabel" for="fecha">📅 Data da visita</label><input type="date" id="fecha"></div>
+<div><label class="flabel" for="turno">⏰ Turno</label><select id="turno" required>
+<option value="" disabled selected></option>
+<option value="Manhã (8h-12h)">Manhã (8h–12h)</option>
+<option value="Tarde (13h-18h)">Tarde (13h–18h)</option>
+<option value="Noite (18h-21h)">Noite (18h–21h)</option>
+</select></div>
+</div>
+<input type="text" id="dir" placeholder="Endereço: rua, número, bairro">
+<input type="text" id="ref" placeholder="Referência (opcional)">
+<input type="text" id="nombre" placeholder="Seu nome">
+<input type="tel" id="tel" placeholder="Seu WhatsApp com DDD">
+<textarea id="desc" placeholder="Descreva o problema do seu notebook..."></textarea>
+<button class="btn-wpp" onclick="enviar()">Agendar visita pelo WhatsApp</button>
+<p class="note"><span class="badgeN">Nível: <span id="nvl-show">—</span></span><br>Se a assessoria recomendou um nível, ele já vem selecionado.</p>
+</div>
+
+<div class="card">
+<h2>Como funciona?</h2>
+<div class="steps3">
+<div><b>1️⃣</b><span>Agende grátis por aqui</span></div>
+<div><b>2️⃣</b><span>Vamos até sua casa ou empresa</span></div>
+<div><b>3️⃣</b><span>Pague ao finalizar</span></div>
+</div>
+</div>
+
+<div class="card faq">
+<h2>Perguntas frequentes</h2>
+<div id="faq-rows"></div>
+</div>
+
+</div>
+
+<footer>
+<b>IA COMPUTERS</b><br>
+<span class="f-serv">Manutenção de notebooks</span><br>
+Curitiba, Paraná, Brasil<br>
+<a class="tel" href="https://wa.me/5541997294355">+55 (41) 99729-4355</a><br>
+✉️ iacomputersbr@gmail.com<br>
+Seg a Sex 8h–17h • Sáb 8h–12h
+</footer>
+<a class="wa-float" href="https://wa.me/5541997294355?text=Ol%C3%A1%2C%20preciso%20reparar%20meu%20notebook" target="_blank">✆</a>
+
+<script>
+var WA="5541997294355";
+/* Servicios: nombre + nivel (precios ocultos al cliente, solo referencia interna) */
+var SERVICOS=[
+ {s:"Remoção de vírus / otimização",n:"N1"},
+ {s:"Instalação de Windows / Linux",n:"N1"},
+ {s:"Limpeza interna + pasta térmica",n:"N1"},
+ {s:"Troca de tela",n:"N2"},
+ {s:"Troca de teclado",n:"N2"},
+ {s:"Troca de bateria",n:"N2"},
+ {s:"Upgrade para SSD + sistema",n:"N2"},
+ {s:"Expansão de memória RAM",n:"N2"},
+ {s:"Recuperação de dados",n:"N2"},
+ {s:"Reparo de placa-mãe",n:"N2"}
+];
+var N1L=["Remoção de vírus e malware","Notebook lento: otimização completa","Instalação de Windows / Linux","Programas, drivers e antivírus","Limpeza interna + troca de pasta térmica","Backup dos seus arquivos","Configuração de WiFi e internet"];
+var N2L=["Troca de tela (quebrada ou com defeito)","Troca de teclado","Troca de bateria","Upgrade para SSD / mais memória RAM","Reparo de dobradiças e carcaça","Reparo de placa-mãe","Recuperação de dados perdidos","Superaquecimento: cooler e sistema térmico"];
+var SINTOMAS=[
+ ["Está muito lento","N1","Otimização e limpeza"],
+ ["Tem vírus ou anúncios","N1","Remoção de vírus"],
+ ["Não liga","N2","Diagnóstico de hardware"],
+ ["Desliga ou esquenta muito","N2","Sistema térmico + pasta"],
+ ["Tela quebrada ou com defeito","N2","Troca de tela"],
+ ["Teclado não funciona","N2","Troca de teclado"],
+ ["Bateria não carrega ou dura pouco","N2","Troca de bateria"],
+ ["Quero mais velocidade","N2","Upgrade SSD / RAM"],
+ ["Instalar o Windows","N1","Instalação de sistema"],
+ ["Perdi meus arquivos","N2","Recuperação de dados"],
+ ["Cooler faz barulho","N1","Limpeza interna"],
+ ["Dobradiça quebrada ou folgada","N2","Reparo de dobradiça"]
+];
+var FAQ=[
+ ["Quanto tempo dura o reparo?","A maioria dos serviços N1 resolve em 1–2 horas na sua casa. Os N2 com peças podem exigir levar o equipamento à oficina por 24–48h."],
+ ["Tela e teclado têm garantia?","Sim, 90 dias de garantia na mão de obra e nas peças instaladas."],
+ ["Quais marcas vocês atendem?","Todas: Lenovo, HP, Dell, Asus, Acer, Samsung, Apple e outras. Informe marca e modelo ao reservar."]
+];
+var NIVEL="";
+function tog(id){document.getElementById(id).classList.toggle('open');}
+function selN(n,btn){NIVEL=n;document.getElementById('nvl-show').textContent=n;
+var bs=document.querySelectorAll('.pick button');for(var i=0;i<bs.length;i++)bs[i].classList.remove('sel');if(btn)btn.classList.add('sel');}
+var labs=document.querySelectorAll('#servicios label');
+for(var i=0;i<labs.length;i++){labs[i].addEventListener('click',function(){var ls=document.querySelectorAll('#servicios label');for(var j=0;j<ls.length;j++)ls[j].classList.remove('sel');this.classList.add('sel');});}
+function paintLists(){
+var a="";for(var i=0;i<N1L.length;i++)a+="<li>✅ "+N1L[i]+"</li>";document.getElementById('t-n1l').innerHTML=a;
+var b="";for(var j=0;j<N2L.length;j++)b+="<li>🔧 "+N2L[j]+"</li>";document.getElementById('t-n2l').innerHTML=b;
+var sl="";for(var k=0;k<SERVICOS.length;k++){sl+="<div class='srv-item'><b>"+SERVICOS[k].s+"</b><span class='tag "+SERVICOS[k].n+"'>"+SERVICOS[k].n+"</span></div>";}
+document.getElementById('srv-list').innerHTML=sl;
+var fq="";for(var f=0;f<FAQ.length;f++){fq+="<details><summary>"+FAQ[f][0]+"</summary><p>"+FAQ[f][1]+"</p></details>";}
+document.getElementById('faq-rows').innerHTML=fq;}
+var wzRes=null;
+function wzRender(){var box=document.getElementById('wz'),h="";
+if(wzRes===null){h="<p style='font-weight:700;margin-bottom:8px'>💻 Qual é o problema do seu notebook?</p>";
+for(var i=0;i<SINTOMAS.length;i++){h+="<button class='wz-opt' onclick='wzEnd("+i+")'>"+SINTOMAS[i][0]+"</button>";}
+}else{var s=SINTOMAS[wzRes],lst=s[1]==="N1"?N1L:N2L,li="";
+for(var k=0;k<lst.length;k++)li+="<li>"+(s[1]==="N1"?"✅":"🔧")+" "+lst[k]+"</li>";
+h="<button class='wz-back' onclick='wzBack()'>← Voltar</button><div class='wz-result'><h3>Recomendamos</h3><span class='lvl "+s[1]+"'>"+s[1]+" — "+s[2]+"</span><p style='font-size:13px;font-weight:700;margin-top:8px'>Seu nível inclui:</p><ul>"+li+"</ul><button class='cta cta-nar' style='width:100%;margin:6px 0' onclick=\"wzGo('"+s[1]+"')\">Agendar visita com este nível</button><a class='cta cta-wpp' style='width:100%;box-sizing:border-box' target='_blank' href='https://wa.me/"+WA+"?text="+encodeURIComponent("Recomendação: "+s[1]+" - "+s[2]+" ("+s[0]+")")+"'>Consultar pelo WhatsApp</a></div>";}
+box.innerHTML=h;}
+function wzBack(){wzRes=null;wzRender();}
+function wzEnd(j){wzRes=j;wzRender();}
+function wzGo(n){selN(n,null);document.getElementById('reserva').scrollIntoView({behavior:'smooth'});}
+function enviar(){
+var srv="";var rs=document.querySelectorAll('input[name=srv]');for(var i=0;i<rs.length;i++)if(rs[i].checked)srv=rs[i].value;
+var marca=document.getElementById('marca').value.trim();
+var fecha=document.getElementById('fecha').value,turno=document.getElementById('turno').value;
+var dir=document.getElementById('dir').value.trim(),ref=document.getElementById('ref').value.trim();
+var nom=document.getElementById('nombre').value.trim(),tel=document.getElementById('tel').value.trim();
+var des=document.getElementById('desc').value.trim();
+if(!NIVEL){alert("Escolha o nível N1 ou N2.");return;}
+if(!srv){alert("Escolha o serviço.");return;}
+if(!fecha||!turno){alert("Escolha data e turno.");return;}
+if(!dir||!nom||!tel){alert("Complete endereço, nome e WhatsApp.");return;}
+var tk='NB-'+Date.now().toString().slice(-6);
+var msg='VISITA '+tk+'%0AEquipamento: Notebook'+(marca?' ('+encodeURIComponent(marca)+')':'')+'%0ANível: '+NIVEL+'%0AServiço: '+encodeURIComponent(srv)+'%0AData: '+fecha+'%0ATurno: '+encodeURIComponent(turno)+'%0AEndereço: '+encodeURIComponent(dir)+(ref?' ('+encodeURIComponent(ref)+')':'')+'%0ACliente: '+encodeURIComponent(nom)+'%0ATel: '+encodeURIComponent(tel)+'%0AProblema: '+encodeURIComponent(des||'-');
+var v=[];try{v=JSON.parse(localStorage.getItem('ia_visitas')||'[]');}catch(e){}
+v.unshift({tk:tk,nvl:NIVEL,srv:srv,marca:marca,fecha:fecha,turno:turno,dir:dir,ref:ref,nom:nom,tel:tel,des:des,estado:'Agendada',valor:'',cobrado:false});
+try{localStorage.setItem('ia_visitas',JSON.stringify(v));}catch(e){}
+window.open('https://wa.me/'+WA+'?text='+msg,'_blank');
+alert('Visita '+tk+' registrada. Entraremos em contato para confirmar.');}
+paintLists();wzRender();
+</script>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||nod
